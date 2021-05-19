@@ -85,10 +85,8 @@
                                 <button type="submit" class="btn btn-primary">Search</button>
                             </div>
                         </form>
-                    </div>
-    
-                </div>
-    
+                    </div> 
+                </div>  
             </div>
         </div>
     </div>
@@ -145,16 +143,12 @@
                             </div>
                         </form>
                     </div>
-
-                </div> 
-               
+                </div>               
             </div>
         </div>
     </div>
 
-
     <div class="container">
-
         <div class="row row-content">
             <div class="col-md-8 mx-auto">
                 <div id="homeCarousel" class="carousel slide" data-ride="carousel">
@@ -194,10 +188,16 @@
                         <span class="carousel-control-next-icon"></span>
                         <span class="sr-only">Next</span>
                     </a>
+                    <div class="btn-group" id="carouselButton">
+                        <button class="btn btn-danger btn-sm">
+                            <i class="fa fa-pause" id="carouselPause"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm">
+                            <i class="fa fa-play" id="carouselPlay"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
-            
-
         </div>
 
         <div class="row row-content align-items-center">
@@ -245,43 +245,6 @@
                 </div>
             </div>
         </div>
-        <div class="row row-content">
-            <div class="col col-sm-6 mx-auto">
-                <div class="card bg-info text-white">
-                    <h3 class="mx-auto">Reserve a Campsite</h3>
-                    <div class="card-body bg-white text-dark">
-                        <form id="reserveForm">
-                            <div class="form-group row">
-                                <label class="col-sm-6 col-form-label" for="numCampers">Number of Campers</label>
-                                    <div class="col">
-                                        <select class="form-control" name="numCampers" id="numCampers" >
-                                            <option>Select...</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                        </select>
-                                    </div>
-                            </div>
-                            <div class=" form-group row">
-                                <label for="date" class="col-sm-6 col-form-label">Date</label>
-                                    <div class="col">
-                                        <input class="form-control" name="date" id="date" placeholder="mm/dd/yyyy">
-                                        </select>
-                                    </div>
-                            </div>
-                            <div class="form-group row mx-auto">
-                                <button data-dismiss="modal" class="btn btn-dark">Cancel</button>
-                                <button type="submit" class="btn btn-primary">Search</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <footer class="site-footer">
         <div class="container">
@@ -316,6 +279,17 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
+    <script>
+        $(function() {
+            $(".carousel").carousel( { interval: 2000 } );
+            $("#carouselPause").click(function(){
+                $(".carousel").carousel("pause");
+            });
+            $("#carouselPlay").click(function(){
+                $(".carousel").carousel("cycle");
+            });
+        });
+    </script>
 </body>
 
 </html>
